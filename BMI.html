@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<input id="weight" value="" type="number" placeholder="Nhập cân nặng(kg)">
+<input id="height" value="" type="number" placeholder="Nhập chiều cao(m)">
+<button onclick="tinhBMI()" value="">Tính BMI</button>
+<p id="ketqua"></p>
+<p id="type"></p>
+<script>
+    function tinhBMI() {
+        let weight = parseFloat(document.getElementById('weight').value)
+        let height = parseFloat(document.getElementById('height').value)
+        let bmi = parseFloat(weight / (height * height))
+        ketqua= (bmi < 18.5) ? 'Underweight' : (bmi < 25) ? 'Normal' : (bmi < 30) ? 'Overweight' : Obese
+        document.getElementById('ketqua').innerHTML='BMI='+bmi
+        document.getElementById('type').innerHTML='Interpretation:'+ketqua
+    }
+</script>
+</body>
+</html>
